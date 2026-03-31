@@ -196,7 +196,7 @@
                 try  {
                     const response = await fetch(`${API_URL}/categoria`);
                     categoriaData = await response.json();
-                    renderizarBotoesCategorias();
+                    renderizarBotoesCategoria();
                     //seleciona a 1ª categoria automatico
                     if (categoriaData.length > 0){
                         selecionarCategoria(categoriaData[0].id, categoriaData[0].nome);
@@ -216,7 +216,7 @@
                         btn.innerText = cat.nome;
                         btn.onclick= () => selecionarCategoria(cat.id, cat.nome);
                         btn.dataset.id = cat.id;
-                        navCategoria.id = cat.id;
+                        navCategoria.appendChild(btn);
                     });
             }
 
